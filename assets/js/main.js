@@ -79,7 +79,7 @@
 
   /* ---------------- Reveal on scroll ---------------- */
   const revealTargets = document.querySelectorAll(
-    ".tl-item, .summary-card, .recurso-card, .fich-card, .thesis-step"
+    ".tl-item, .summary-card, .recurso-card, .fich-card, .thesis-step, .seminario-card, .orientacao-grid"
   );
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
@@ -432,4 +432,28 @@
 
   /* ---------------- Rodapé: nota metodológica ---------------- */
   document.getElementById("footerNote").textContent = NOTA_METODOLOGICA;
+
+  /* =========================================================================
+     SEMINÁRIO APRESENTADO — detecta se o PDF já foi anexado ao projeto
+     ========================================================================= */
+  (function checkSeminarioPdf() {
+    const PDF_PATH = "assets/docs/seminario-pesquisa-social.pdf";
+    const statusEl = document.getElementById("seminarioStatus");
+    const linkEl = document.getElementById("seminarioLink");
+    const badgeEl = document.getElementById("seminarioBadge");
+
+    fetch(PDF_PATH, { method: "HEAD" })
+      .then((res) => {
+        if (res.ok) {
+          statusEl.textContent = "PDF disponível para consulta e download.";
+          linkEl.hidden = false;
+        } else {
+          throw new Error("not found");
+        }
+      })
+      .catch(() => {
+        statusEl.textContent = "Os slides ainda serão anexados a esta seção.";
+        badgeEl.hidden = false;
+      });
+  })();
 })();
