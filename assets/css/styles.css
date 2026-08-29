@@ -439,6 +439,33 @@ button{ font-family: inherit; cursor: pointer; }
   display:flex; align-items:center; justify-content:center;
 }
 
+/* ---------- lightbox de fotos ---------- */
+img.js-lightbox{ cursor: zoom-in; }
+.lightbox-overlay{
+  position: fixed; inset:0; background: rgba(8,10,8,.86);
+  z-index: 950; display:flex; align-items:center; justify-content:center; padding: 4vh 4vw;
+}
+.lightbox-overlay[hidden]{ display:none; }
+.lightbox-figure{
+  margin:0; max-width: min(92vw, 900px); max-height: 92vh; display:flex; flex-direction:column; align-items:center; gap:.9rem;
+  animation: lightboxIn .2s ease;
+}
+@keyframes lightboxIn{ from{ opacity:0; transform: scale(.97);} to{ opacity:1; transform:none; } }
+.lightbox-figure img{
+  max-width:100%; max-height: 82vh; width:auto; height:auto; object-fit:contain;
+  border-radius: var(--radius-md); box-shadow: var(--shadow-lg); background: var(--bg-elevated);
+}
+.lightbox-figure figcaption{
+  color: #f2f0ea; font-size:.9rem; text-align:center; font-style: italic; max-width: 60ch; opacity:.85;
+}
+.lightbox-figure figcaption:empty{ display:none; }
+.lightbox-close{
+  position: fixed; top: 1.5rem; right: 1.5rem; width:44px; height:44px; border-radius:50%;
+  border:1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.08); color:#fff; z-index:2;
+  display:flex; align-items:center; justify-content:center; backdrop-filter: blur(4px);
+}
+.lightbox-close:hover{ background: rgba(255,255,255,.18); }
+
 /* ---------- modal ---------- */
 .modal-overlay{
   position: fixed; inset:0; background: rgba(10,12,10,.55); backdrop-filter: blur(3px);

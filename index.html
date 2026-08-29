@@ -63,7 +63,7 @@
       <div class="hero-meta">
         <div class="hero-author">
           <span class="avatar avatar-md" id="avatarPerfil">
-            <img src="assets/img/francisco-perfil.jpg" alt="Foto de Francisco Ribeiro dos Santos Júnior" onerror="this.closest('.avatar').classList.add('avatar-fallback'); this.remove();" />
+            <img class="js-lightbox" src="assets/img/francisco-perfil.jpg" alt="Foto de Francisco Ribeiro dos Santos Júnior" onerror="this.closest('.avatar').classList.add('avatar-fallback'); this.remove();" />
             <span class="avatar-initials" aria-hidden="true">FR</span>
           </span>
           <span class="hero-author-text">
@@ -130,7 +130,7 @@
           <div class="tl-dot" aria-hidden="true"></div>
           <div class="tl-card tl-card-photo">
             <span class="tl-thumb">
-              <img src="assets/img/ifpb.jpg" alt="Francisco, ainda estudante, ao lado de um professor do IFPB" onerror="this.parentElement.remove()" />
+              <img class="js-lightbox" src="assets/img/ifpb.jpg" alt="Francisco, ainda estudante, ao lado de um professor do IFPB" onerror="this.parentElement.remove()" />
             </span>
             <span class="tl-card-body">
               <span class="tl-period">2012 – 2014</span>
@@ -162,7 +162,7 @@
           <div class="tl-dot" aria-hidden="true"></div>
           <div class="tl-card tl-card-photo">
             <span class="tl-thumb">
-              <img src="assets/img/mestrado.jpg" alt="Francisco com colegas e professores em evento acadêmico do Mestrado" onerror="this.parentElement.remove()" />
+              <img class="js-lightbox" src="assets/img/mestrado.jpg" alt="Francisco com colegas e professores em evento acadêmico do Mestrado" onerror="this.parentElement.remove()" />
             </span>
             <span class="tl-card-body">
               <span class="tl-period">2023</span>
@@ -176,7 +176,7 @@
           <div class="tl-dot" aria-hidden="true"></div>
           <div class="tl-card tl-card-photo">
             <span class="tl-thumb">
-              <img src="assets/img/coordenador-pedagogico.jpg" alt="Francisco apresentando como Coordenador Pedagógico" onerror="this.parentElement.remove()" />
+              <img class="js-lightbox" src="assets/img/coordenador-pedagogico.jpg" alt="Francisco apresentando como Coordenador Pedagógico" onerror="this.parentElement.remove()" />
             </span>
             <span class="tl-card-body">
               <span class="tl-period">2022 – 2025</span>
@@ -199,7 +199,7 @@
           <div class="tl-dot" aria-hidden="true"></div>
           <div class="tl-card tl-card-photo">
             <span class="tl-thumb">
-              <img src="assets/img/francisco-perfil.jpg" alt="Francisco Ribeiro dos Santos Júnior" onerror="this.parentElement.remove()" />
+              <img class="js-lightbox" src="assets/img/francisco-perfil.jpg" alt="Francisco Ribeiro dos Santos Júnior" onerror="this.parentElement.remove()" />
             </span>
             <span class="tl-card-body">
               <span class="tl-period">Em andamento</span>
@@ -242,7 +242,7 @@
       <div class="orientacao-grid">
         <figure class="orientacao-photo">
           <span class="photo-frame" id="fotoOrientacao">
-            <img src="assets/img/francisco-edna.jpg" alt="Francisco Ribeiro dos Santos Júnior com a Professora Drª Edna Gusmão de Góes Brennand" onerror="this.closest('.photo-frame').classList.add('photo-pending'); this.remove();" />
+            <img class="js-lightbox" src="assets/img/francisco-edna.jpg" alt="Francisco Ribeiro dos Santos Júnior com a Professora Drª Edna Gusmão de Góes Brennand" onerror="this.closest('.photo-frame').classList.add('photo-pending'); this.remove();" />
             <span class="photo-pending-text">Foto em breve</span>
           </span>
           <figcaption>Com a Professora Drª Edna Gusmão de Góes Brennand</figcaption>
@@ -427,6 +427,17 @@
     <nav class="modal-tabs" id="modalTabs"></nav>
     <div class="modal-body" id="modalBody"></div>
   </div>
+</div>
+
+<!-- ============ LIGHTBOX DE FOTOS ============ -->
+<div class="lightbox-overlay" id="lightboxOverlay" hidden>
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Fechar">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M6.4 4.98 4.98 6.4 10.59 12l-5.61 5.6 1.41 1.42L12 13.41l5.6 5.61 1.42-1.42L13.41 12l5.61-5.6-1.42-1.42L12 10.59z"/></svg>
+  </button>
+  <figure class="lightbox-figure">
+    <img id="lightboxImg" src="" alt="" />
+    <figcaption id="lightboxCaption"></figcaption>
+  </figure>
 </div>
 
 <script src="assets/js/data.js"></script>
