@@ -431,4 +431,45 @@
         badgeEl.hidden = false;
       });
   })();
+
+  /* =========================================================================
+     LIGHTBOX — clique em qualquer foto do portfólio para ampliar
+     ========================================================================= */
+  (function setupLightbox() {
+    const overlay = document.getElementById("lightboxOverlay");
+    const imgEl = document.getElementById("lightboxImg");
+    const captionEl = document.getElementById("lightboxCaption");
+    const closeBtn = document.getElementById("lightboxClose");
+    let lastFocused = null;
+
+    function openLightbox(photo) {
+      lastFocused = document.activeElement;
+      imgEl.src = photo.currentSrc || photo.src;
+      imgEl.alt = photo.alt || "";
+      captionEl.textContent = photo.alt || "";
+      overlay.hidden = false;
+      document.body.style.overflow = "hidden";
+      closeBtn.focus();
+    }
+
+    function closeLightbox() {
+      overlay.hidden = true;
+      imgEl.src = "";
+      document.body.style.overflow = "";
+      if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
+    }
+
+    document.addEventListener("click", (e) => {
+      const photo = e.target.closest("img.js-lightbox");
+      if (photo) openLightbox(photo);
+    });
+
+    closeBtn.addEventListener("click", closeLightbox);
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !overlay.hidden) closeLightbox();
+    });
+  })();
 })();
