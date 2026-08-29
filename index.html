@@ -7,7 +7,7 @@
 <meta name="description" content="Portfólio digital interativo da disciplina Pesquisa Social, PPGE/UFPB — Francisco Ribeiro dos Santos Júnior." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700;1,7..72,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styles.css" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
 </head>
@@ -30,16 +30,14 @@
     <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
       <a href="#trajetoria" data-nav>Trajetória</a>
       <a href="#disciplina" data-nav>A Disciplina</a>
+      <a href="#orientacao" data-nav>Orientação</a>
       <a href="#recursos" data-nav>Recursos Visuais</a>
+      <a href="#seminario" data-nav>Seminário</a>
       <a href="#fichamentos" data-nav>Fichamentos</a>
       <a href="#fio-condutor" data-nav>Fio Condutor</a>
     </nav>
 
     <div class="header-actions">
-      <button id="themeToggle" class="icon-btn" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">
-        <svg class="icon-sun" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="currentColor" d="M12 4a1 1 0 0 1-1-1V1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1Zm0 19a1 1 0 0 1-1-1v-2a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1ZM4 13H2a1 1 0 1 1 0-2h2a1 1 0 1 1 0 2Zm19 0h-2a1 1 0 1 1 0-2h2a1 1 0 1 1 0 2ZM5.6 6.99a1 1 0 0 1-.71-.29L3.5 5.31A1 1 0 1 1 4.91 3.9l1.4 1.4a1 1 0 0 1-.71 1.7Zm12.8 12.8a1 1 0 0 1-.71-.3l-1.4-1.4a1 1 0 1 1 1.41-1.41l1.4 1.4a1 1 0 0 1-.7 1.71ZM4.9 20.1a1 1 0 0 1-.7-1.71l1.4-1.4a1 1 0 1 1 1.4 1.41l-1.4 1.4a1 1 0 0 1-.7.3Zm13.5-13.1a1 1 0 0 1-.7-1.7l1.4-1.4a1 1 0 1 1 1.4 1.41l-1.4 1.4a1 1 0 0 1-.7.29ZM12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Z"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="currentColor" d="M20.7 15.3A8.7 8.7 0 0 1 8.7 3.3a.8.8 0 0 0-1-1A10 10 0 1 0 21.7 16.3a.8.8 0 0 0-1-1Z"/></svg>
-      </button>
       <button id="navToggle" class="icon-btn nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
         <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
       </button>
@@ -64,8 +62,14 @@
 
       <div class="hero-meta">
         <div class="hero-author">
-          <span class="hero-author-name">Francisco Ribeiro dos Santos Júnior</span>
-          <span class="hero-author-role">Doutorando em Educação — PPGE/UFPB</span>
+          <span class="avatar avatar-md" id="avatarPerfil">
+            <img src="assets/img/francisco-perfil.jpg" alt="Foto de Francisco Ribeiro dos Santos Júnior" onerror="this.closest('.avatar').classList.add('avatar-fallback'); this.remove();" />
+            <span class="avatar-initials" aria-hidden="true">FR</span>
+          </span>
+          <span class="hero-author-text">
+            <span class="hero-author-name">Francisco Ribeiro dos Santos Júnior</span>
+            <span class="hero-author-role">Doutorando em Educação — PPGE/UFPB</span>
+          </span>
         </div>
         <div class="hero-place">
           <span>João Pessoa – PB</span>
@@ -84,14 +88,26 @@
     </div>
   </section>
 
+  <!-- ============ NOTA DE TRANSPARÊNCIA SOBRE USO DE IA ============ -->
+  <div class="ai-note">
+    <div class="ai-note-inner">
+      <span class="ai-note-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2 9.5 8.5 3 11l6.5 2.5L12 20l2.5-6.5L21 11l-6.5-2.5L12 2Z"/></svg>
+      </span>
+      <p><strong>Nota de transparência:</strong> na construção deste portfólio digital, utilizei o auxílio da inteligência artificial <strong>Claude</strong> (Anthropic) para apoio na programação visual do site, na organização das fontes/referências e no entendimento de textos complexos durante a elaboração dos fichamentos. As leituras, análises e reflexões apresentadas são de minha autoria.</p>
+    </div>
+  </div>
+
   <!-- ============ SUMÁRIO RÁPIDO (chips) ============ -->
   <nav class="quicknav" aria-label="Sumário do portfólio">
     <div class="quicknav-inner">
       <a href="#trajetoria" class="chip"><span class="chip-num">01</span> Trajetória</a>
       <a href="#disciplina" class="chip"><span class="chip-num">02</span> A Disciplina</a>
-      <a href="#recursos" class="chip"><span class="chip-num">03</span> Recursos Visuais</a>
-      <a href="#fichamentos" class="chip"><span class="chip-num">04</span> Fichamentos</a>
-      <a href="#fio-condutor" class="chip"><span class="chip-num">05</span> Fio Condutor</a>
+      <a href="#orientacao" class="chip"><span class="chip-num">03</span> Orientação</a>
+      <a href="#recursos" class="chip"><span class="chip-num">04</span> Recursos Visuais</a>
+      <a href="#seminario" class="chip"><span class="chip-num">05</span> Seminário</a>
+      <a href="#fichamentos" class="chip"><span class="chip-num">06</span> Fichamentos</a>
+      <a href="#fio-condutor" class="chip"><span class="chip-num">07</span> Fio Condutor</a>
     </div>
   </nav>
 
@@ -197,16 +213,50 @@
     </div>
   </section>
 
+  <!-- ============ PERCURSO DE ORIENTAÇÃO ============ -->
+  <section class="section" id="orientacao">
+    <div class="section-inner">
+      <p class="section-kicker">Uma dívida de gratidão</p>
+      <h2 class="section-title">Percurso de Orientação</h2>
+
+      <div class="orientacao-grid">
+        <figure class="orientacao-photo">
+          <span class="photo-frame" id="fotoOrientacao">
+            <img src="assets/img/francisco-edna.jpg" alt="Francisco Ribeiro dos Santos Júnior com a Professora Drª Edna Gusmão de Góes Brennand" onerror="this.closest('.photo-frame').classList.add('photo-pending'); this.remove();" />
+            <span class="photo-pending-text">Foto em breve</span>
+          </span>
+          <figcaption>Com a Professora Drª Edna Gusmão de Góes Brennand</figcaption>
+        </figure>
+
+        <div class="orientacao-text">
+          <p>Há pessoas que atravessam mais de uma etapa da nossa formação e deixam marca em cada uma delas. A Professora Dra. Edna Gusmão de Góes Brennand é uma dessas pessoas na minha trajetória: foi minha orientadora no Mestrado em Educação, quando construímos juntos a dissertação sobre tecnologias para o mapeamento e enfrentamento da violência escolar na Paraíba, e agora, no Doutorado, segue mediando meus passos — desta vez como professora da disciplina de Pesquisa Social.</p>
+          <p>Sua trajetória de pesquisa — sólida, plural e atenta às urgências sociais da educação — se traduz em uma orientação que nunca separa rigor teórico de escuta humana. Seu repertório teórico amplo dialoga com autores densos sem nunca perder de vista os sujeitos concretos da educação, e é exatamente essa combinação que transforma uma orientação em formação de verdade.</p>
+          <p>Aprender com ela é sempre reencontrar aquele encantamento pela pesquisa despertado ainda no PIBIC-EM: a certeza de que produzir conhecimento é também um gesto de cuidado com quem pesquisa. Ser orientado, pela segunda vez, por alguém com essa experiência e essa generosidade é, sem exagero, um dos maiores privilégios desta caminhada acadêmica.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ SUMÁRIO ORIGINAL (referência) ============ -->
   <section class="section" aria-labelledby="sumario-titulo">
     <div class="section-inner">
       <p class="section-kicker" id="sumario-titulo">Sumário do portfólio</p>
       <h2 class="section-title">O que você vai encontrar</h2>
       <div class="summary-grid">
+        <a href="#orientacao" class="summary-card">
+          <span class="summary-icon" aria-hidden="true">🤝</span>
+          <h3>Percurso de Orientação</h3>
+          <p>Um reconhecimento à Profª Drª Edna Brennand, orientadora no Mestrado e mediadora desta disciplina no Doutorado.</p>
+        </a>
         <a href="#recursos" class="summary-card">
           <span class="summary-icon" aria-hidden="true">🎬</span>
           <h3>Recursos Visuais</h3>
           <p>2 vídeos e 1 filme, lidos à luz da teoria do reconhecimento de Axel Honneth e da epistemologia da pesquisa social.</p>
+        </a>
+        <a href="#seminario" class="summary-card">
+          <span class="summary-icon" aria-hidden="true">🎤</span>
+          <h3>Seminário Apresentado</h3>
+          <p>Slides da apresentação de seminário da disciplina, disponíveis para consulta e download.</p>
         </a>
         <a href="#fichamentos" class="summary-card">
           <span class="summary-icon" aria-hidden="true">📚</span>
@@ -230,6 +280,27 @@
       <p class="section-lead">Três obras audiovisuais analisadas a partir da teoria do reconhecimento de Axel Honneth e da epistemologia da pesquisa social, conectando currículo, tecnologia e produção de conhecimento.</p>
 
       <div id="recursosContainer" class="recursos-list"></div>
+    </div>
+  </section>
+
+  <!-- ============ SEMINÁRIO APRESENTADO ============ -->
+  <section class="section" id="seminario">
+    <div class="section-inner">
+      <p class="section-kicker">Apresentação oral</p>
+      <h2 class="section-title">Seminário Apresentado na Disciplina</h2>
+      <p class="section-lead">Slides utilizados na apresentação de seminário da disciplina Pesquisa Social, sobre a obra <em>O Direito da Liberdade</em>, de Axel Honneth — disponibilizados aqui para consulta.</p>
+
+      <div class="seminario-card" id="seminarioCard">
+        <span class="seminario-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 1.5V8h4.5L14 3.5ZM8 13h8v1.5H8V13Zm0 3h8v1.5H8V16.5Zm0-6h4v1.5H8V10.5Z"/></svg>
+        </span>
+        <span class="seminario-text">
+          <strong id="seminarioTitulo">O Direito da Liberdade — Axel Honneth</strong>
+          <span id="seminarioStatus" class="seminario-status">Verificando disponibilidade…</span>
+        </span>
+        <a id="seminarioLink" class="btn btn-primary seminario-btn" href="assets/docs/seminario-pesquisa-social.pdf" target="_blank" rel="noopener" hidden>Ver / baixar PDF</a>
+        <span id="seminarioBadge" class="seminario-badge" hidden>Em breve</span>
+      </div>
     </div>
   </section>
 
@@ -258,7 +329,7 @@
   <!-- ============ FIO CONDUTOR / SÍNTESE ============ -->
   <section class="section section-thesis" id="fio-condutor">
     <div class="section-inner">
-      <p class="section-kicker">Síntese</p>
+      <p class="section-kicker">Pensando o percurso da tese...</p>
       <h2 class="section-title">Fio condutor: reconhecimento, visibilidade e a tese</h2>
       <p class="section-lead">Educação, aqui, não se reduz à sala de aula: é o trabalho de tornar visível o que estava invisível e de formar sujeitos capazes de ler criticamente a realidade.</p>
 

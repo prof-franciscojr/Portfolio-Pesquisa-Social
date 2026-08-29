@@ -4,31 +4,6 @@
 (function () {
   "use strict";
 
-  /* ---------------- Tema claro/escuro ---------------- */
-  const THEME_KEY = "portfolio-pesquisa-social-theme";
-  const themeToggle = document.getElementById("themeToggle");
-  const root = document.documentElement;
-
-  function applyTheme(theme) {
-    if (theme === "light" || theme === "dark") {
-      root.setAttribute("data-theme", theme);
-    } else {
-      root.removeAttribute("data-theme");
-    }
-  }
-  try {
-    const saved = localStorage.getItem(THEME_KEY);
-    if (saved) applyTheme(saved);
-  } catch (e) { /* localStorage indisponível — segue com o padrão do sistema */ }
-
-  themeToggle.addEventListener("click", () => {
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const current = root.getAttribute("data-theme") || (prefersDark ? "dark" : "light");
-    const next = current === "dark" ? "light" : "dark";
-    applyTheme(next);
-    try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
-  });
-
   /* ---------------- Mobile nav ---------------- */
   const navToggle = document.getElementById("navToggle");
   const mainNav = document.getElementById("mainNav");
@@ -79,7 +54,7 @@
 
   /* ---------------- Reveal on scroll ---------------- */
   const revealTargets = document.querySelectorAll(
-    ".tl-item, .summary-card, .recurso-card, .fich-card, .thesis-step"
+    ".tl-item, .summary-card, .recurso-card, .fich-card, .thesis-step, .seminario-card, .orientacao-grid"
   );
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
@@ -432,4 +407,28 @@
 
   /* ---------------- Rodapé: nota metodológica ---------------- */
   document.getElementById("footerNote").textContent = NOTA_METODOLOGICA;
+
+  /* =========================================================================
+     SEMINÁRIO APRESENTADO — detecta se o PDF já foi anexado ao projeto
+     ========================================================================= */
+  (function checkSeminarioPdf() {
+    const PDF_PATH = "assets/docs/seminario-pesquisa-social.pdf";
+    const statusEl = document.getElementById("seminarioStatus");
+    const linkEl = document.getElementById("seminarioLink");
+    const badgeEl = document.getElementById("seminarioBadge");
+
+    fetch(PDF_PATH, { method: "HEAD" })
+      .then((res) => {
+        if (res.ok) {
+          statusEl.textContent = "PDF disponível para consulta e download.";
+          linkEl.hidden = false;
+        } else {
+          throw new Error("not found");
+        }
+      })
+      .catch(() => {
+        statusEl.textContent = "Os slides ainda serão anexados a esta seção.";
+        badgeEl.hidden = false;
+      });
+  })();
 })();
