@@ -427,6 +427,17 @@ button{ font-family: inherit; cursor: pointer; }
 .thesis-step p{ font-size:.88rem; color: var(--ink-soft); margin:0; }
 .thesis-caveat{ font-size:.85rem; color: var(--ink-faint); font-style: italic; max-width: 70ch; }
 
+/* ---------- ensaio (SISV 2026) ---------- */
+.ensaio-card{
+  max-width: 840px; background: var(--bg-elevated); border:1px solid var(--line); border-radius: var(--radius-lg);
+  padding: 2rem 2.2rem; box-shadow: var(--shadow-sm);
+}
+.ensaio-resumo{
+  color: var(--ink-soft); font-size: 1rem; line-height: 1.75; margin: 0 0 1.7rem;
+  text-align: justify; text-justify: inter-word; hyphens: auto;
+}
+.ensaio-btn{ display:inline-flex; align-items:center; gap:.55rem; }
+
 /* ---------- footer ---------- */
 .site-footer{ background: var(--ink); color: color-mix(in srgb, var(--bg) 85%, white); padding: 2.6rem 1.5rem; position:relative; }
 .footer-inner{ max-width:1160px; margin:0 auto; display:grid; grid-template-columns: repeat(3,1fr); gap:1.6rem; }
