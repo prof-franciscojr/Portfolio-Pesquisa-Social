@@ -4,31 +4,6 @@
 (function () {
   "use strict";
 
-  /* ---------------- Tema claro/escuro ---------------- */
-  const THEME_KEY = "portfolio-pesquisa-social-theme";
-  const themeToggle = document.getElementById("themeToggle");
-  const root = document.documentElement;
-
-  function applyTheme(theme) {
-    if (theme === "light" || theme === "dark") {
-      root.setAttribute("data-theme", theme);
-    } else {
-      root.removeAttribute("data-theme");
-    }
-  }
-  try {
-    const saved = localStorage.getItem(THEME_KEY);
-    if (saved) applyTheme(saved);
-  } catch (e) { /* localStorage indisponível — segue com o padrão do sistema */ }
-
-  themeToggle.addEventListener("click", () => {
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const current = root.getAttribute("data-theme") || (prefersDark ? "dark" : "light");
-    const next = current === "dark" ? "light" : "dark";
-    applyTheme(next);
-    try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
-  });
-
   /* ---------------- Mobile nav ---------------- */
   const navToggle = document.getElementById("navToggle");
   const mainNav = document.getElementById("mainNav");
